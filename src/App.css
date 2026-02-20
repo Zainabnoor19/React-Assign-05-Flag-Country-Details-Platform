@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --bg-color: #F2F5F7;       /* Very Light Soft Blue/Grey */
+  --card-bg: #FFFFFF;        /* Pure White */
+  --nav-bg: #2C3E50;         /* Deep Muted Blue (from palette) */
+  --accent-soft: #A8C0D3;    /* Dusty Blue */
+  --accent-teal: #7B9095;    /* Muted Teal/Blue */
+  --text-main: #34495E;      /* Dark Slate Blue */
+  --text-muted: #7F8C8D;     /* Greyish blue */
+  --border: #DDE4E8;         /* Soft Border Blue */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: var(--nav-bg);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.navbar-logo a {
+  font-family: 'Playfair Display', serif;
+  color: #F2F5F7;
+  text-decoration: none;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+}
+
+/* DROPDOWN */
+.dropdown-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--accent-soft);
+  color: #F2F5F7;
+  padding: 8px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: 0.3s;
+}
+
+.dropdown-btn:hover { background: var(--accent-soft); color: var(--nav-bg); }
+
+.search-dropdown {
+  position: absolute;
+  right: 0;
+  top: 130%;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  width: 200px;
+  max-height: 250px;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  border-radius: 4px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.search-dropdown li {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: var(--text-main);
+}
+
+.search-dropdown li:hover { background: var(--bg-color); color: var(--accent-teal); }
+
+/* SEARCH BAR */
+.search {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  margin: 40px auto;
+  padding: 15px 25px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: var(--card-bg);
+  color: var(--text-main);
+  font-size: 0.9rem;
+  outline: none;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.search:focus { border-color: var(--accent-soft); box-shadow: 0 4px 20px rgba(168, 192, 211, 0.2); }
+
+/* CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.modern-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.modern-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-soft);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.05);
+}
+
+.modern-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-content { padding: 18px; }
+.card-content h3 { font-family: 'Playfair Display', serif; color: var(--nav-bg); margin: 0 0 10px 0; font-size: 1.05rem; }
+.card-content p { font-size: 0.8rem; color: var(--text-muted); margin: 5px 0; }
+.card-content p b { color: var(--accent-teal); font-weight: 600; }
+
+.detail-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--accent-teal);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* PAGINATION */
+.pagination { margin: 50px 0; display: flex; justify-content: center; align-items: center; gap: 15px; }
+.pagination button {
+  background: var(--nav-bg);
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.pagination button:hover:not(:disabled) { background: var(--accent-teal); }
+.pagination button:disabled { opacity: 0.3; }
+
+/* NOT FOUND */
+.notfound-content {
+  background: var(--card-bg);
+  padding: 60px 40px;
+  border-radius: 15px;
+  border: 1px solid var(--border);
+  text-align: center;
+  max-width: 500px;
+  margin: 80px auto;
+}
