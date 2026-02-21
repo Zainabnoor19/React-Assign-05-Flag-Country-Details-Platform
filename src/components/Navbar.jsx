@@ -20,22 +20,21 @@ const Navbar = ({ countries }) => {
         <div className="navbar-logo">
           <Link to="/">🌍 CountryAtlas</Link>
         </div>
-
-        <div className="navbar-dropdown">
-          <button className="dropdown-btn" onClick={() => setShow(!show)}>
-            Quick Select <span>⬇</span>
-          </button>
-          
-          {show && (
-            <ul className="search-dropdown">
-              {dropdownList.map(c => (
-                <li key={c.cca3} onClick={() => handleGo(c.name.common)}>
-                  {c.name.common}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
+<div className="navbar-dropdown">
+  <button className="dropdown-btn" onClick={() => setShow(!show)}>
+    Quick Select <span>⬇</span>
+  </button>
+  
+  {show && (
+    <ul className="search-dropdown">
+      {dropdownList.map(c => (
+        <li key={c.cca3} onClick={() => handleGo(c.name.common)}>
+          {c.name.common}
+        </li>
+      ))}
+    </ul>
+  )}
+</div>
       </div>
     </nav>
   );

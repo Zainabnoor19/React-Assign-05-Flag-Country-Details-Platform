@@ -11,7 +11,7 @@ const NotFound = () => {
           The records you are looking for have been moved or do not exist in our current collection.
         </p>
         <Link to="/" className="notfound-link">
-          Return to Atlas
+        Back to Explorer
         </Link>
       </div>
     </div>
